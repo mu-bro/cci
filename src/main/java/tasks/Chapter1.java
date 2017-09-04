@@ -81,4 +81,37 @@ public class Chapter1 {
         }
         return false;
     }
+
+    public static char[] replaceSpaces(char[] str, int length) {
+        int newLength = length;
+        for(int i = 0; i < length; i++) {
+            if (str[i] == ' ') {
+                newLength+=2;
+            }
+        }
+        str[newLength] = '\0';
+        int newLength2 = newLength-1;
+        for (int i = length-1; i >= 0; i--) {
+            newLength--;
+            if (str[i] == ' ') {
+                str[newLength--] = '0';
+                str[newLength--] = '2';
+                str[newLength] = '%';
+            } else {
+                str[newLength] = str[i];
+            }
+        }
+        char newArr[] = new char[newLength2];
+        System.arraycopy(str, 0, newArr, 0, newLength2);
+        return newArr;
+    }
+
+    public int[][] rotateImage(int[][] matrix, int n) {
+        int tmp;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+
+            }
+        }
+    }
 }

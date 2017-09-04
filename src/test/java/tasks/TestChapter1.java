@@ -41,4 +41,11 @@ public class TestChapter1 {
         Assert.assertFalse(Chapter1.isStringsAnagrams("qwertyu","ytrewq"));
     }
 
+    @Test
+    public void replaceSpacesTest() {
+        Assert.assertTrue("aaa%20bc%20".equals(new String(Chapter1.replaceSpaces("aaa bc AAAAAAAAAAAAAA".toCharArray(), 8))));
+        Assert.assertTrue("a%20%2011aa%20bc%20".equals(new String(Chapter1.replaceSpaces("a  11aa bc AAAAAAAAAAAAAA".toCharArray(), 12))));
+        Assert.assertTrue("%20%20".equals(new String(Chapter1.replaceSpaces("  AAAAAAAAAAAAAA".toCharArray(), 3))));
+    }
+
 }
