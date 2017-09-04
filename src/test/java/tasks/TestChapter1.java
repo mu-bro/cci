@@ -28,7 +28,17 @@ public class TestChapter1 {
         Assert.assertTrue("abcd".equals(Chapter1.removeDuplicatedCharacters("abacd")));
         Assert.assertTrue("abcd".equals(Chapter1.removeDuplicatedCharacters("abaaacd")));
         Assert.assertTrue("ab".equals(Chapter1.removeDuplicatedCharacters("aaaabbbbb")));
-        Assert.assertTrue("abcd".equals(Chapter1.removeDuplicatedCharacters("abcd")));
+        Assert.assertTrue("abcd".equals(Chapter1.removeDuplicatedCharacters("abd")));
+    }
+
+    @Test
+    public void isStringsAnagramsTest() {
+        Assert.assertTrue(Chapter1.isStringsAnagrams("aaabc","cbaaa"));
+        Assert.assertTrue(Chapter1.isStringsAnagrams("aaaabbbb","abababab"));
+        Assert.assertTrue(Chapter1.isStringsAnagrams("qwertyyu","uytrewyq"));
+        Assert.assertFalse(Chapter1.isStringsAnagrams("abbc","aacb"));
+        Assert.assertFalse(Chapter1.isStringsAnagrams("aaabbbb","aaabbb"));
+        Assert.assertFalse(Chapter1.isStringsAnagrams("qwertyu","ytrewq"));
     }
 
 }
