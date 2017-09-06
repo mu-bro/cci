@@ -1,5 +1,7 @@
 package tasks;
 
+import helpers.Helper;
+
 public class Chapter1 {
 
     public static boolean isUniqueCharacters(String input) {
@@ -84,14 +86,14 @@ public class Chapter1 {
 
     public static char[] replaceSpaces(char[] str, int length) {
         int newLength = length;
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             if (str[i] == ' ') {
-                newLength+=2;
+                newLength += 2;
             }
         }
         str[newLength] = '\0';
-        int newLength2 = newLength-1;
-        for (int i = length-1; i >= 0; i--) {
+        int newLength2 = newLength - 1;
+        for (int i = length - 1; i >= 0; i--) {
             newLength--;
             if (str[i] == ' ') {
                 str[newLength--] = '0';
@@ -106,12 +108,48 @@ public class Chapter1 {
         return newArr;
     }
 
-    public int[][] rotateImage(int[][] matrix, int n) {
-        int tmp;
-        for (int i = 1; i <= n; i++) {
-            for (int j = 1; j <= n; j++) {
-
+    public static int[][] rotateImage(int[][] matrix, int n) {
+        n--;
+        Helper.printMatrix("Input:", matrix);
+        int tmp, target_i, target_j, source_i, source_j;
+        int step = 0;
+        for (int i = step++; i < n - step; i++) {
+            for (int j = i; j < n - i; j++) {
+                tmp = matrix[i][j];
+                rotateElement(i, j, matrix);
+                rotateElement(n - j, i, matrix);
+                rotateElement(n - i, n - j, matrix);
+                matrix[j][n - i] = tmp;
             }
         }
+        Helper.printMatrix("Result:", matrix);
+        return matrix;
+    }
+
+    private static void rotateElement(int i, int j, int[][] matrix) {
+        matrix[i][j] = matrix[matrix.length - 1 - j][i];
+    }
+
+    public static int[][] rowsAndColumnsToZero(int[][] matrix) {
+        Helper.printMatrix("Input:", matrix);
+        int[] rows = new int[matrix.length];
+        int[] columns = new int[matrix[0].length];
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == 0) {
+                    rows[i] = columns[j] = 1;
+                }
+            }
+        }
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (rows[i] == 1 || columns[j] == 1) {
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        Helper.printMatrix("Result:", matrix);
+        return matrix;
     }
 }
