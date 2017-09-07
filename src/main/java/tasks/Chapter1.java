@@ -108,6 +108,10 @@ public class Chapter1 {
         return newArr;
     }
 
+
+    /**
+     * Complexity - O(n2)
+     */
     public static int[][] rotateImage(int[][] matrix, int n) {
         n--;
         Helper.printMatrix("Input:", matrix);
@@ -132,24 +136,33 @@ public class Chapter1 {
 
     public static int[][] rowsAndColumnsToZero(int[][] matrix) {
         Helper.printMatrix("Input:", matrix);
-        int[] rows = new int[matrix.length];
-        int[] columns = new int[matrix[0].length];
+        int rows = 0;
+        int columns = 0;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] == 0) {
-                    rows[i] = columns[j] = 1;
+                    rows |= (1<<i);
+                    columns |= (1<<j);
                 }
             }
         }
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (rows[i] == 1 || columns[j] == 1) {
+                if (((rows & (1<<i)) > 0) || ((columns & (1<<j)) > 0)) {
                     matrix[i][j] = 0;
                 }
             }
         }
         Helper.printMatrix("Result:", matrix);
         return matrix;
+    }
+
+    public static boolean isRotation(String s1, String s2) {
+        if (s1.length() != s2.length()) {
+            return false;
+        }
+        String s1s1 = s1 + s1;
+        return s1s1.contains(s2);
     }
 }

@@ -75,7 +75,7 @@ public class TestChapter1 {
 
     @Test
     public void rowsAndColumnsToZeroTest() {
-        Chapter1.rowsAndColumnsToZero(createRandomMatrix(5,6));
+//        Chapter1.rowsAndColumnsToZero(createRandomMatrix(5,6));
         int[][] input = new int[][]{
                 {30, 24, 18, 12, 0, 23},
                 {31, 25, 19, 13, 7, 1},
@@ -93,6 +93,16 @@ public class TestChapter1 {
                 {35, 0, 23, 17, 0, 5}
         };
         Assert.assertArrayEquals(expected, Chapter1.rowsAndColumnsToZero(input));
+    }
+
+    @Test
+    public void isRotationTest() {
+        Assert.assertTrue(Chapter1.isRotation("asdfg","dfgas"));
+        Assert.assertTrue(Chapter1.isRotation("helloworld","worldhello"));
+        Assert.assertTrue(Chapter1.isRotation("apple","leapp"));
+        Assert.assertFalse(Chapter1.isRotation("applee","apple"));
+        Assert.assertFalse(Chapter1.isRotation("asdfg","gfdsa"));
+        Assert.assertFalse(Chapter1.isRotation("helloworld","hellaworld"));
     }
 
 }
