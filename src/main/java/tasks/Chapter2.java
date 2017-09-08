@@ -83,7 +83,11 @@ public class Chapter2 {
         return p2.data;
     }
 
-
+    public static <T> void removeFromMiddle(Node<T> middle) {
+        Node<T> nextElem = middle.next;
+        middle.next = nextElem.next;
+        middle.data = nextElem.data;
+    }
 
 
 

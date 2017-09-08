@@ -35,5 +35,17 @@ public class TestChapter2 {
         exception.expect(Exception.class);
         Assert.assertEquals(2,Chapter2.findNthElement(n, 3));
     }
+
+    @Test
+    public void removeFromMiddleTest() {
+        Chapter2.Node n = new Chapter2.Node(1).add(2).add(3).add(4).add(5).add(6).add(7).add(8);
+        Chapter2.Node middle = n.next.next.next;
+        Chapter2.removeFromMiddle(middle);
+        Assert.assertEquals("1235678",n.toString());
+
+        middle = n.next.next.next.next;
+        Chapter2.removeFromMiddle(middle);
+        Assert.assertEquals("123578",n.toString());
+    }
 }
 
