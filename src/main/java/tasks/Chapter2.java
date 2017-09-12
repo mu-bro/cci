@@ -1,5 +1,7 @@
 package tasks;
 
+import helpers.Node;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -45,11 +47,11 @@ public class Chapter2 {
     public static <T> T findNthElement(Node<T> head, int n) throws Exception {
         Node<T> elem = head;
         int linkedListLength = 1;
-        while(elem.next != null) {
+        while (elem.next != null) {
             linkedListLength++;
             elem = elem.next;
         }
-        if (linkedListLength-1 < n) {
+        if (linkedListLength - 1 < n) {
             throw new Exception("Not enough elements in list");
         }
         int needToFind = linkedListLength - n;
@@ -58,7 +60,7 @@ public class Chapter2 {
         if (needToFind == 0) {
             return elem.data;
         }
-        for(int i = 1; i < needToFind; i++) {
+        for (int i = 1; i < needToFind; i++) {
             elem = elem.next;
         }
         return elem.next.data;
@@ -89,46 +91,25 @@ public class Chapter2 {
         middle.data = nextElem.data;
     }
 
-
-
-
-    public static class Node<E> {
-        E data;
-        Node<E> next;
-        Node<E> prev;
-
-        Node(E data) {
-            this.data = data;
-        }
-
-        Node(Node<E> prev, E element, Node<E> next) {
-            this.data = element;
-            this.next = next;
-            this.prev = prev;
-        }
-
-        public Node add(E data) {
-            Node newElem = new Node(data);
-            Node n = this;
-            while (n.next != null) {
-                n = n.next;
+    public static <T> Node findFirstInLoop(Node<T> head) throws Exception {
+        Node<T> n1 = head;
+        Node<T> n2 = head;
+        while (n2.next != null) {
+            n1 = n1.next;
+            n2 = n2.next.next;
+            if (n1 == n2) {
+                break;
             }
-            n.next = newElem;
-            newElem.prev = n;
-            return this;
         }
-
-        @Override
-        public String toString() {
-            StringBuilder result = new StringBuilder();
-            Node n = this;
-            while (n.next != null) {
-                result.append(n.data);
-                n = n.next;
-            }
-            result.append(n.data);
-            return result.toString();
+        if (n2.next == null) {
+            throw new Exception("no loop in linked list");
         }
-
+        n1 = head;
+        while (n1 != n2) {
+            n1 = n1.next;
+            n2 = n2.next;
+        }
+        return n2;
     }
+
 }
