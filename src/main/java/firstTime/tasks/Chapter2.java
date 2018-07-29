@@ -1,6 +1,6 @@
-package tasks;
+package firstTime.tasks;
 
-import helpers.Node;
+import firstTime.helpers.Node;
 
 import java.util.HashMap;
 import java.util.Map;

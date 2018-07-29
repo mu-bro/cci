@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class Stack<T> {
     Node<T> top;

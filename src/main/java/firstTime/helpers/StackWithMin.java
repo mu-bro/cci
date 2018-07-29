@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class StackWithMin<T extends Comparable<T>> {
     MNode<Integer> top;

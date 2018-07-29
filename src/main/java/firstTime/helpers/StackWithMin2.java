@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class StackWithMin2 extends Stack<Integer> {
     Stack<Integer> s2;

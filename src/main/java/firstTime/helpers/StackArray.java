@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class StackArray<T> {
     int topElem = 0;

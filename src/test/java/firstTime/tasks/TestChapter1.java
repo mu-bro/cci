@@ -1,10 +1,9 @@
-package tasks;
+package firstTime.tasks;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import static helpers.Helper.createMatrix;
-import static helpers.Helper.createRandomMatrix;
+import static firstTime.helpers.Helper.createMatrix;
 
 
 public class TestChapter1 {

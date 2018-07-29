@@ -1,12 +1,10 @@
-package tasks;
+package firstTime.tasks;
 
-import helpers.Node;
+import firstTime.helpers.Node;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import static helpers.Helper.createMatrix;
 
 public class TestChapter2 {
 

@@ -1,4 +1,4 @@
-package tasks;
+package firstTime.tasks;
 
 import java.util.HashMap;
 import java.util.Map;

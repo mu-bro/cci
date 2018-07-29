@@ -1,9 +1,8 @@
-package tasks;
+package firstTime.tasks;
 
-import helpers.Node;
-import helpers.Stack3Array;
-import helpers.StackArray;
-import helpers.StackWithMin2;
+import firstTime.helpers.Stack3Array;
+import firstTime.helpers.StackArray;
+import firstTime.helpers.StackWithMin2;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,6 +1,6 @@
-package tasks;
+package firstTime.tasks;
 
-import helpers.Helper;
+import firstTime.helpers.Helper;
 
 public class Chapter1 {
 

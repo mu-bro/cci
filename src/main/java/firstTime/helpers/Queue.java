@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class Queue<E> {
     Node<E> first, last;

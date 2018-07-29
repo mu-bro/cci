@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class Node<E> {
     public E data;

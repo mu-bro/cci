@@ -1,4 +1,4 @@
-package helpers;
+package firstTime.helpers;
 
 public class Stack3Array2 {
     int stackSize = 300;
