@@ -2,11 +2,11 @@ package firstTime.tasks;
 
 import firstTime.helpers.Stack3Array;
 import firstTime.helpers.StackArray;
-import firstTime.helpers.StackWithMin2;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import secondTime.helpers.Stack;
 
 public class TestChapter3 {
 
@@ -60,14 +60,15 @@ public class TestChapter3 {
 
     @Test
     public void stackWithMin2Test() {
-        StackWithMin2 stack = new StackWithMin2();
+        Stack stack = new Stack();
         stack.push(7);
         stack.push(6);
         stack.push(4);
         stack.push(5);
-        stack.pull();
-        stack.pull();
-        Assert.assertEquals(6, stack.min());
+        stack.pop();
+        Assert.assertEquals(6, stack.peek());
+        stack.pop();
+        Assert.assertEquals(4, stack.peek());
 
     }
 

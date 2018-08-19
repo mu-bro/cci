@@ -22,4 +22,12 @@ public class Queue<E> {
         first = first.next;
         return data;
     }
+
+    public E peek() {
+        return first.data;
+    }
+
+    public boolean isEmpty() {
+        return first == null;
+    }
 }
